@@ -4,9 +4,6 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
 def index():
-    return redirect(url_for('static', filename='index.html'))
-@app.route("/dashboard")
-def dashboard():
     summary=apiresolver.getsummary()
     total=summary['total']
     confirmedCasesIndian=summary['confirmedCasesIndian']
@@ -19,3 +16,5 @@ def dashboard():
     dischargedcases=apiresolver.dischargedcases()
     return render_template('dashboard.html', total=total,discharged=discharged,deaths=deaths,confirmedCasesIndian=confirmedCasesIndian,confirmedCasesForeign=confirmedCasesForeign,statelist=statelist,confirmcases=confirmcases,deathcases=deathcases,dischargedcases=dischargedcases)
 
+if __name__ == '__main__':
+    app.run()
