@@ -11,7 +11,7 @@ def getsummary():
     return summary
 def statelist():
     statelist=[]
-    data=getreq();
+    data=getreq()
     cases=data['data']
     regional=cases['regional']
     for state in regional:
@@ -21,7 +21,7 @@ def statelist():
 
 def confirmcases():
     confirmcaseslist=[]
-    data=getreq();
+    data=getreq()
     cases=data['data']
     regional=cases['regional']
     for state in regional:
@@ -33,7 +33,7 @@ def confirmcases():
 
 def deathcases():
     deathcaseslist=[]
-    data=getreq();
+    data=getreq()
     cases=data['data']
     regional=cases['regional']
     for state in regional:
@@ -43,7 +43,7 @@ def deathcases():
 
 def dischargedcases():
     dischargedcaseslist=[]
-    data=getreq();
+    data=getreq()
     cases=data['data']
     regional=cases['regional']
     for state in regional:
