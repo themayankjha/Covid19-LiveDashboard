@@ -1,6 +1,6 @@
 import requests
 from flask_table import Table, Col
-items=[]
+
 class ItemTable(Table):
     statename = Col('State Name')
     confirm = Col('Confirmed Cases')
@@ -13,6 +13,7 @@ class Item(object):
         self.totaldeath=totaldeath
         self.totalrecovered=totalrecovered
 def tablebuilder():
+    items=[]
     data = requests.get("https://api.rootnet.in/covid19-in/stats/latest")
     data = data.json()
     regional=data['data']['regional']
